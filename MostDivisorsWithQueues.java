@@ -32,7 +32,7 @@ public class MostDivisorsWithQueues {
 	 */
 
 	private static final int START = 0;
-	private static final int END = 10000;
+	private static final int END = 100000;
 
 	private static volatile int maxDivisors; // Maximum number of divisors
 	// seen so
