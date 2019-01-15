@@ -1,8 +1,4 @@
-package ex3;
-
 import java.util.concurrent.*;
-
-import com.eck.ch12.ex1.TextIO;
 
 /**
  * This program finds the number, within a specified range of integers from 1 to
@@ -36,7 +32,7 @@ public class MostDivisorsWithQueues {
 	 */
 
 	private static final int START = 0;
-	private static final int END = 100000;
+	private static final int END = 10000;
 
 	private static volatile int maxDivisors; // Maximum number of divisors
 	// seen so
@@ -54,12 +50,6 @@ public class MostDivisorsWithQueues {
 	 * this point in the program with each thread's greatest number of divisors
 	 * and its number. This method is synchronized because it's possible for two
 	 * or more threads to call this method at relatively the same time.
-	 * 
-	 * @param currentMaxDivisors
-	 *            an individual thread's greatest number of divisors
-	 * @param currentNumWithMaxDivisors
-	 *            an individual thread's number from the range of numbers
-	 *            assigned to it that has the greatest number of divisors.
 	 */
 	synchronized private static void updateDivisor(
 			CountDivisorsResult result) {
@@ -214,7 +204,7 @@ public class MostDivisorsWithQueues {
 		while (numberOfThreads < 1 || numberOfThreads > 50) {
 			System.out
 					.print("How many threads do you want to use  (from 1 to 50 ) ?  ");
-			numberOfThreads = TextIO.getlnInt();
+			numberOfThreads = com.eck.ch12.ex1.TextIO.getlnInt();
 			if (numberOfThreads < 1 || numberOfThreads > 50)
 				System.out
 						.println("Please choose a number 1 through "
